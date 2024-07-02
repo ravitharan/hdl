@@ -1,5 +1,5 @@
 set PATH ./
-set PROJECT simple
+set PROJECT incdec
 
 create_project -force project_1 $PATH/$PROJECT -part xck26-sfvc784-2LVI-i
 set_property board_part xilinx.com:k26i:part0:1.4 [current_project]
