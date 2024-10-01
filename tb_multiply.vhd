@@ -35,18 +35,20 @@ begin
     clk <= not clk after 5 ns;
     nReset  <= '1' after 100ns;
 
-    process
-        variable v1 : signed(WIDTH-1 downto 0) := x"0025";
-        variable v2 : signed(WIDTH-1 downto 0) := x"0026";
+    process (clk)
+        variable v1 : signed(WIDTH-1 downto 0);
+        variable v2 : signed(WIDTH-1 downto 0);
     begin
-        wait for 200ns;
+        if rising_edge(clk) then
+            if nReset = '0' then
+                v1 := x"0025";
+                v2 := x"0000";
+            else
+                v2 := v2 + 1;
+            end if;
+        end if;
         num1 <= std_logic_vector(v1);
         num2 <= std_logic_vector(v2);
-        wait for 10ns;
-        v2 := v2 + 1;
-        num2 <= std_logic_vector(v2);
-        wait for 10ns;
-        wait;
     end process;
 
 

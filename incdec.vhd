@@ -30,8 +30,8 @@ begin
     begin
         if rising_edge(i_clk) then
             if (i_nReset = '0') then
-                inc := to_unsigned(WIDTH/2, inc'length);
-                dec := to_unsigned(WIDTH/2, dec'length);
+                inc := to_unsigned(2**(WIDTH-2), inc'length);
+                dec := to_unsigned(2**(WIDTH-2), dec'length);
             else
                 inc   := inc + 1;
                 dec   := dec - 1;
