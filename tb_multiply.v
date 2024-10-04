@@ -19,22 +19,15 @@ module tb_multiply();
       #100 nReset = 0;
     end
 
-  always
-    begin
-      #10 clk = ~ clk;
-    end
+  always #10 clk = ~clk;
 
-  always @(posedge clk)
-    begin
-      if (nReset == 1)
-        begin
-          num1 = 'h0025;
-          num2 = 0;
-        end
-      else
-        begin
-          num2 = num2 + 1;
-        end
+  always @(posedge clk) begin
+    if (nReset == 1) begin
+      num1 = 'h0025;
+      num2 = 0;
+    end else begin
+      num2 = num2 + 1;
     end
+  end
 
 endmodule

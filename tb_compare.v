@@ -21,17 +21,13 @@ compare #(WIDTH) compare_1(num1, num2, out);
       #100 nReset = 1;
     end
 
-  always
-    begin
-      #10 clk = ~clk;
-    end
+  always #10 clk = ~clk;
 
-  always @(posedge clk)
-    begin
-      if (nReset == 0)
-        num2 = 0;
-      else
-        num2 = num2 + 1;
-    end
+  always @(posedge clk) begin
+    if (nReset == 0)
+      num2 = 0;
+    else
+      num2 = num2 + 1;
+  end
 
 endmodule

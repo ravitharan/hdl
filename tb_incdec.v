@@ -16,7 +16,6 @@ initial
     #100 nReset = 1;
   end
 
-  always
-    #10 clk = ~clk;
+  always #10 clk = ~clk;
 
 endmodule

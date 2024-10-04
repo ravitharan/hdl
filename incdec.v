@@ -10,17 +10,15 @@ module incdec(i_clk, i_nReset, o_inc, o_dec);
   reg [WIDTH-1:0] inc;
   reg [WIDTH-1:0] dec;
 
-  always @(posedge i_clk)
-    if (i_nReset == 1'b0)
-      begin
-        inc = 1 << WIDTH-2;
-        dec = 1 << WIDTH-2;
-      end
-    else
-      begin
-        inc = inc + 1;
-        dec = dec - 1;
-      end
+  always @(posedge i_clk) begin
+    if (i_nReset == 0) begin
+      inc = 1 << WIDTH-2;
+      dec = 1 << WIDTH-2;
+    end else begin
+      inc = inc + 1;
+      dec = dec - 1;
+    end
+  end
 
   assign o_inc = inc;
   assign o_dec = dec;
