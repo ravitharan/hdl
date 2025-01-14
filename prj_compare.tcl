@@ -9,7 +9,7 @@ if { [info exists LAN] } {
 
 create_project -force ${PROJECT}_${LANGUAGE} $PATH/vivado/$PROJECT -part xck26-sfvc784-2LVI-i
 set_property board_part xilinx.com:k26i:part0:1.4 [current_project]
-set_property target_language VHDL [current_project]
+set_property target_language $LANGUAGE [current_project]
 
 if {$LANGUAGE == "vhdl"} {
   add_files -norecurse $PATH/vhdl/compare.vhd
