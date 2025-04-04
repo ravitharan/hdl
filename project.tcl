@@ -7,6 +7,8 @@ set ALL_PROJECTS(5) {lookup vhd vhd}
 set ALL_PROJECTS(6) {multiply v v}
 set ALL_PROJECTS(7) {multiply vhd vhd}
 set ALL_PROJECTS(8) {lut_ram v v}
+set ALL_PROJECTS(9) {compare_2 v v}
+set ALL_PROJECTS(10) {compare_3 v v}
 
 set PROJECT [lindex $ALL_PROJECTS($inx) 0]
 set EXT [lindex $ALL_PROJECTS($inx) 1]
