@@ -21,7 +21,7 @@ compare #(WIDTH) compare_1(num1, num2, out);
       #100 nReset = 1;
     end
 
-  always #10 clk = ~clk;
+  always #5 clk = ~clk;
 
   always @(posedge clk) begin
     if (nReset == 0)
