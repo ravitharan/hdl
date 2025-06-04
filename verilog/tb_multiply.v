@@ -23,10 +23,10 @@ module tb_multiply();
 
   always @(posedge clk) begin
     if (nReset == 1) begin
-      num1 = 'h0025;
+      num1 = 4000;
       num2 = 0;
     end else begin
-      num2 = num2 + 1;
+      num2 = num2 + 'h100;
     end
   end
 
