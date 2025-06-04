@@ -20,10 +20,10 @@ if {$EXT == "v"} {
   set LANGUAGE vhdl
 }
 
-set SRC ./$LANGUAGE/${PROJECT}.${EXT}
-set TB_SRC ./$LANGUAGE/tb_${PROJECT}.${TB_EXT}
+set SRC ./$LANGUAGE/$PROJECT/$PROJECT.$EXT
+set TB_SRC ./$LANGUAGE/$PROJECT/tb_$PROJECT.$TB_EXT
 
-create_project -force ${PROJECT} ./${PROJECT}_${EXT} -part xck26-sfvc784-2LVI-i
+create_project -force ${PROJECT} ./$LANGUAGE/$PROJECT/$PROJECT -part xck26-sfvc784-2LVI-i
 set_property board_part xilinx.com:k26i:part0:1.4 [current_project]
 set_property target_language $LANGUAGE [current_project]
 
